@@ -1,43 +1,29 @@
-//package by.bsu.data.main;
-import entity.ServiceType;
-
+import connect.ConnectorDB;
+import entity.Role;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Properties;
-//import by.bsu.data.subject.Abonent;
+
 
 public class SimpleJDBCRunner {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/beautybar";
-        Properties prop = new Properties();
-        prop.put("user", "root");
-        prop.put("password", "sXG>lcli*8w<");
-        prop.put("autoReconnect", "true");
-        prop.put("characterEncoding", "UTF-8");
-        prop.put("useUnicode", "true");
+
         Connection cn = null;
-//        try {
-//            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
         try { // 1 блок
-            cn = DriverManager.getConnection(url, prop);
+            cn = ConnectorDB.getConnection();
             Statement st = null;
             try { // 2 блок
                 st = cn.createStatement();
                 ResultSet rs = null;
                 try { // 3 блок
-                    rs = st.executeQuery("SELECT * FROM service_type");
-                    ArrayList<ServiceType> lst = new ArrayList<>();
+                    rs = st.executeQuery("SELECT * FROM role");
+                    ArrayList<Role> lst = new ArrayList<>();
                     while (rs.next()) {
                         int id = rs.getInt(1);
-                        String type = rs.getString(2);
-                        lst.add(new ServiceType(id, type));
+                        String roleName = rs.getString(2);
+                        lst.add(new Role(id, roleName));
                     }
                     if (lst.size() > 0) {
                         System.out.println(lst);
