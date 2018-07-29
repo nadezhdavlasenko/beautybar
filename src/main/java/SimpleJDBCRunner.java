@@ -21,7 +21,7 @@ public class SimpleJDBCRunner {
                     rs = st.executeQuery("SELECT * FROM role");
                     ArrayList<Role> lst = new ArrayList<>();
                     while (rs.next()) {
-                        int id = rs.getInt(1);
+                        Long id = rs.getLong(1);
                         String roleName = rs.getString(2);
                         lst.add(new Role(id, roleName));
                     }

@@ -2,23 +2,23 @@ package entity;
 
 import java.util.Objects;
 
-public class Role extends Entity {
-
+public class ServiceType extends Entity{
     private String name;
 
-    public Role(String name) {
+    public ServiceType(String name) {
         this.name = name;
     }
 
-    public Role(Long id, String name) {
+    public ServiceType(Long id, String name) {
         super(id);
         this.name = name;
     }
 
-    public String getTypeName() {
+    public String getName() {
         return name;
     }
-    public void setTypeName(String name) {
+
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -26,7 +26,7 @@ public class Role extends Entity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Role that = (Role) o;
+        ServiceType that = (ServiceType) o;
         return Objects.equals(name, that.name);
     }
 
@@ -37,9 +37,8 @@ public class Role extends Entity {
 
     @Override
     public String toString() {
-        return "Role{" +
+        return "ServiceType{" +
                 "name='" + name + '\'' +
                 '}';
     }
-
 }
