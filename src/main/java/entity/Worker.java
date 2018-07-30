@@ -2,15 +2,17 @@ package entity;
 
 import java.util.Objects;
 
-public class Client extends Entity{
+public class Worker extends Entity {
 
+    private Role role;
     private String name;
     private String email;
     private String phone;
     private String passwordHash;
     private String salt;
 
-    public Client(String name, String email, String phone, String passwordHash, String salt) {
+    public Worker(Role role, String name, String email, String phone, String passwordHash, String salt) {
+        this.role = role;
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -18,8 +20,9 @@ public class Client extends Entity{
         this.salt = salt;
     }
 
-    public Client(Long id, String name, String email, String phone, String passwordHash, String salt) {
+    public Worker(Long id, Role role, String name, String email, String phone, String passwordHash, String salt) {
         super(id);
+        this.role = role;
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -27,25 +30,15 @@ public class Client extends Entity{
         this.salt = salt;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Client client = (Client) o;
-        return Objects.equals(name, client.name) &&
-                Objects.equals(email, client.email) &&
-                Objects.equals(phone, client.phone) &&
-                Objects.equals(passwordHash, client.passwordHash) &&
-                Objects.equals(salt, client.salt);
+    public Role getRole() {
+        return role;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, email, phone, passwordHash, salt);
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public String getName() {
-
         return name;
     }
 
@@ -86,9 +79,28 @@ public class Client extends Entity{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Worker)) return false;
+        Worker worker = (Worker) o;
+        return Objects.equals(role, worker.role) &&
+                Objects.equals(name, worker.name) &&
+                Objects.equals(email, worker.email) &&
+                Objects.equals(phone, worker.phone) &&
+                Objects.equals(passwordHash, worker.passwordHash) &&
+                Objects.equals(salt, worker.salt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(role, name, email, phone, passwordHash, salt);
+    }
+
+    @Override
     public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
+        return "Worker{" +
+                "role=" + role +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", passwordHash='" + passwordHash + '\'' +

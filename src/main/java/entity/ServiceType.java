@@ -3,6 +3,7 @@ package entity;
 import java.util.Objects;
 
 public class ServiceType extends Entity{
+
     private String name;
 
     public ServiceType(String name) {
