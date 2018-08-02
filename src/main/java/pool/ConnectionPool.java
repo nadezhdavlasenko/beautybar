@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 
 public class ConnectionPool {
 
-    private static final String DATASOURCE_NAME = "jdbc/testphones";
+    private static final String DATASOURCE_NAME = "jdbc/beautybar";
     private static DataSource dataSource;
     static {
         try {
