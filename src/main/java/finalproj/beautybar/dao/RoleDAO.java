@@ -1,17 +1,16 @@
-package dao;
+package finalproj.beautybar.dao;
 
-import entity.Role;
-import pool.ConnectionPool;
+import finalproj.beautybar.entity.Role;
+import finalproj.beautybar.pool.ConnectionPool;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 import java.util.List;
 
-public class RoleDAO extends AbstractDAO <Integer, Role> {
+public class RoleDAO extends AbstractDAO<Integer, Role> {
 
     public static final String SQL_SELECT_ALL_ROLES = "SELECT * FROM role";
 

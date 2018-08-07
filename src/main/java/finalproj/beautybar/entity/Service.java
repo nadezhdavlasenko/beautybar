@@ -1,4 +1,4 @@
-package entity;
+package finalproj.beautybar.entity;
 
 import java.util.Objects;
 

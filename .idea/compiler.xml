@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="beauty" />
         <module name="beautybar" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="beauty" target="1.5" />
       <module name="beautybar" target="1.8" />
     </bytecodeTargetLevel>
   </component>

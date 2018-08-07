@@ -1,7 +1,7 @@
-package dao;
+package finalproj.beautybar.dao;
 
-import action.WrapperConnector;
-import entity.Entity;
+import finalproj.beautybar.action.WrapperConnector;
+import finalproj.beautybar.entity.Entity;
 
 import java.sql.Connection;
 import java.sql.SQLException;

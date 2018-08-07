@@ -1,4 +1,4 @@
-package entity;
+package finalproj.beautybar.entity;
 import java.io.Serializable;
 public abstract class Entity implements Serializable, Cloneable {
 

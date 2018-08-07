@@ -1,25 +1,24 @@
-package entity;
+package finalproj.beautybar.entity;
 
 import java.util.Objects;
 
-public class ServiceType extends Entity{
+public class Role extends Entity {
 
     private String name;
 
-    public ServiceType(String name) {
+    public Role(String name) {
         this.name = name;
     }
 
-    public ServiceType(Long id, String name) {
+    public Role(Long id, String name) {
         super(id);
         this.name = name;
     }
 
-    public String getName() {
+    public String getTypeName() {
         return name;
     }
-
-    public void setName(String name) {
+    public void setTypeName(String name) {
         this.name = name;
     }
 
@@ -27,7 +26,7 @@ public class ServiceType extends Entity{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ServiceType that = (ServiceType) o;
+        Role that = (Role) o;
         return Objects.equals(name, that.name);
     }
 
@@ -38,8 +37,9 @@ public class ServiceType extends Entity{
 
     @Override
     public String toString() {
-        return "ServiceType{" +
+        return "Role{" +
                 "name='" + name + '\'' +
                 '}';
     }
+
 }

@@ -1,4 +1,4 @@
-package action;
+package finalproj.beautybar.action;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
